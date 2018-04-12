@@ -35,6 +35,18 @@ public class SpringApplet extends JApplet{
 		Vector2D VectorMul1 = VectorA.MultipleVectors(3);
 		Vector2D VectorMul2 = VectorB.MultipleVectors(3);
 		
+		Vector2D NormalA = VectorA.NormalVector();
+		Vector2D NormalB = VectorB.NormalVector();
+		double VectorAlength,VectorBlength,Vectorsumlength,VectorSublength,VectorMul1length,VectorMul2length,VectorNrm1length,VectorNrm2length;
+		VectorAlength = VectorA.getLength();
+		VectorBlength = VectorB.getLength();
+		Vectorsumlength = VectorSum.getLength();
+		VectorSublength = VectorSub.getLength();
+		VectorMul1length = VectorMul1.getLength();
+		VectorMul2length = VectorMul2.getLength();
+		VectorNrm1length = NormalA.getLength();
+		VectorNrm2length = NormalB.getLength();
+		
 		
 		//Showing Info about the vectors
 		VectorA.Show_Info();
@@ -42,13 +54,14 @@ public class SpringApplet extends JApplet{
 		VectorB.Show_Info();
 		
 		System.out.print("\n");
-		System.out.println("New vector which is a sum of Vectors A and B is [" + VectorSum.getX() + "," + VectorSum.getY() + "]");
+		System.out.println("New vector which is a sum of Vectors A and B is [" + VectorSum.getX() + "," + VectorSum.getY() + "] and its length is " + Vectorsumlength);
 		System.out.print("\n");
-		System.out.println("New vector which is a subtraction of Vectors A and B is [" + VectorSub.getX() + "," + VectorSub.getY() + "]");		
+		System.out.println("New vector which is a subtraction of Vectors A and B is [" + VectorSub.getX() + "," + VectorSub.getY() + "] and its length is " + VectorSublength);		
 		System.out.print("\n");
-		System.out.println("New vector which is a multiplication of Vectors A by constance " + VectorA.getCnst() + " is [" + VectorMul1.getX() + "," + VectorMul1.getY() + "]");
+		System.out.println("New vector which is a multiplication of Vectors A by constance " + VectorA.getCnst() + " is [" + VectorMul1.getX() + "," + VectorMul1.getY() + "] and its length is " + VectorMul1length);
 		System.out.print("\n");
-		System.out.println("New vector which is a multiplication of Vectors B by constance " +VectorB.getCnst() + " is [" + VectorMul2.getX() + "," + VectorMul2.getY() + "]");
+		System.out.println("New vector which is a multiplication of Vectors B by constance " +VectorB.getCnst() + " is [" + VectorMul2.getX() + "," + VectorMul2.getY() + "] and its length is " + VectorMul2length);
+		
 	}
 	
 	/**
@@ -73,7 +86,7 @@ public class SpringApplet extends JApplet{
 		g.drawLine(width,hgth/2,width-15,(hgth/2)+7);
 		g.drawLine(width,hgth/2,width-15,(hgth/2)-7);
 		
-		/*
+		
 		//Creating the scale of the axis 
 		for(int i=1;i<20;i++)
 		{
@@ -90,7 +103,7 @@ public class SpringApplet extends JApplet{
 			g.drawString("-10",width/2 + 10,(hgth/2)+60);	
 			}
 		}
-		*/	
+		
 		
 		//Creating vectors needed to be drawn
 		Vector2D VectorA = new Vector2D(21,13);
@@ -153,7 +166,7 @@ public class SpringApplet extends JApplet{
 		
 		// Vectors Subtraction drawing section
 		
-		/*
+		
 		Color myColor5 = new Color(122,33,50);
 		g.setColor(myColor5);
 		g.drawLine(width/2,hgth/2,5*(int)Math.round(VectorA.getX())+width/2,(hgth/2)-5*(int)Math.round(VectorA.getY()));
@@ -177,7 +190,7 @@ public class SpringApplet extends JApplet{
 		g.drawLine(width/2,hgth/2,(width/2)+4,hgth/2+12);
 		g.drawLine(width/2,hgth/2,width/2+10,hgth/2+7);
 		g.drawString("Vector A-B ["+VectorSub.getX() +" , " + VectorSub.getY() + "]"	, 2*(int)Math.round(VectorSub.getX())+width/2-190,(hgth/2)-3*(int)Math.round(VectorSub.getY()));
-		*/
+		
 		
 		// Vectors Multiplication drawing section
 		
@@ -201,7 +214,7 @@ public class SpringApplet extends JApplet{
 		
 	
 		//Creating the scale for the normalized vector to show their length and coordinates much better
-		
+		/*
 		for(int i=1;i<20;i++)
 		{
 			g.drawLine((width/2)-10,(int)Math.round(hgth-i*hgth/20),10+width/2,(int)Math.round(hgth-i*hgth/20));
@@ -235,7 +248,7 @@ public class SpringApplet extends JApplet{
 		g.drawLine(width/2,hgth/2,width/2+480*(int)Math.round(100*VectorBNorm.getnormalX())/100,(hgth/2)-485*(int)Math.round(VectorBNorm.getY()));
 		g.drawLine(width/2+480*(int)Math.round(100*VectorBNorm.getnormalX())/100,(hgth/2)-485*(int)Math.round(VectorBNorm.getY()),width/2+480*(int)Math.round(100*VectorBNorm.getnormalX())/100-13,(hgth/2)-485*(int)Math.round(VectorBNorm.getY())+9);
 		g.drawLine(width/2+480*(int)Math.round(100*VectorBNorm.getnormalX())/100,(hgth/2)-485*(int)Math.round(VectorBNorm.getY()),width/2+480*(int)Math.round(100*VectorBNorm.getnormalX())/100+7,(hgth/2)-485*(int)Math.round(VectorBNorm.getY())+11);
-		
+		*/
 	}
 
 

@@ -162,6 +162,7 @@ public class Vector2D {
 		System.out.println("Vector you created is [" + getX() + "," + getY() + "]" );
 		System.out.println("The length of the vector above is " + getLength());
 		System.out.println("New vector which is a normalised vector above is [" + getnormalX() + "," + getnormalY() + "]");
+		System.out.println("Length of the normalised vector above is" + NormalVector().getLength());
 		
 	}
 }
